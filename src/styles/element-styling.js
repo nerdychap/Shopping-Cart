@@ -46,3 +46,7 @@ width: 90%;
 margin: 0 auto 100px;
 `;
 
+export const LoaderWrapper = styled.div`
+display: grid;
+justify-content: center;
+`;
