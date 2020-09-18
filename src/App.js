@@ -21,6 +21,7 @@ function App() {
       dispatch({ type: ACTIONS.ADD_ITEM, payload: { itemName: itemName, price: price, quantity: quantity, items: items } });
       setPrice(0);
       setItemName("");
+      setQuantity(1);
     }
     else {
       setIsDuplicate(true)
@@ -42,7 +43,7 @@ function App() {
   return (
     <section >
       <Header>Shopping Cart</Header>
-      <Form setItemName={setItemName} setPrice={setPrice} setQuantity={setQuantity} items={items} dispatch={dispatch} submit={handleSubmit} setIsDuplicate={setIsDuplicate} isDuplicate={isDuplicate} state={{ price: price, name: itemName }} />
+      <Form setItemName={setItemName} setPrice={setPrice} setQuantity={setQuantity} items={items} dispatch={dispatch} submit={handleSubmit} setIsDuplicate={setIsDuplicate} isDuplicate={isDuplicate} quantity={quantity} state={{ price: price, name: itemName }} />
       <ItemsWrapper>
         <Items items={items} removeItem={handleRemove} editField={editField} />
       </ItemsWrapper>

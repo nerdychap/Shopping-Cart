@@ -30,9 +30,14 @@ box-shadow: 0 0 5px green;
 margin: 10px 0;
 padding: 5px;
 display: grid;
+font-size: 1.2em;
 font-weight: bold;
+gap: 5px;
 span{
     text-transform: capitalize;
+}
+div{
+    margin: 3px 0;
 }
 `;
 export const ItemsWrapper = styled.article`

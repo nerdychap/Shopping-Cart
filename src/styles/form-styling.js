@@ -29,10 +29,13 @@ export const Button = styled("button")`
     margin: 5px auto;
     width: 100%;
     max-width: 500px;
-    &:hover{
+    @media screen and (min-width: 1024px){
+        &:hover{
     color: ${({ bgColor }) => bgColor};
     background-color: ${({ color }) => color};
     }
+    }
+
     `;
 
 export const Label = styled.label`
