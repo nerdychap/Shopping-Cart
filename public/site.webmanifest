@@ -1,6 +1,7 @@
 {
     "name": "Shopping Cart",
     "short_name": "Shopping Cart",
+    "description": "App emulates a shopping cart",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,7 +15,8 @@
             "type": "image/png"
         }
     ],
+    "start_url": "/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "fullscreen"
 }
