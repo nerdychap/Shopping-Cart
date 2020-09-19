@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../misc/CartContext';
 import { Button, DuplicateError, FormWrapper, Input, InputWrapper, Label } from '../styles/form-styling';
 
-const Form = ({ setItemName, setPrice, setQuantity, setIsDuplicate, isDuplicate, submit, quantity, state: { price, name } }) => {
+const Form = () => {
+    const { setItemName, handleSubmit, setPrice, setQuantity, setIsDuplicate, isDuplicate, quantity, price, name } = useContext(CartContext);
     const quantityValue = [1, 2, 3, 4, 5];
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        submit();
 
+    const submit = (e) => {
+        e.preventDefault();
+        handleSubmit();
     }
     return (
         <>
-            <FormWrapper onSubmit={handleSubmit}>
+            <FormWrapper onSubmit={submit}>
                 <InputWrapper>
                     <Label htmlFor="itemName">Name</Label><Input id="itemName" color="grey" value={name} onChange={(e) => {
                         setItemName(e.target.value);

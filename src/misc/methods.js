@@ -5,8 +5,7 @@ export const newItems = (name, price, quantity) => {
 }
 
 export const reducer = (state, action) => {
-    const { type, payload: { itemName, price, quantity, id, value, productName } } = action;
-
+    const { type, payload: { itemName, price, quantity, id, value, productName, items } } = action;
     switch (type) {
         case ACTIONS.ADD_ITEM:
             return [...state, newItems(itemName, price, quantity)];
@@ -38,6 +37,8 @@ export const reducer = (state, action) => {
 
 
             })
+        case ACTIONS.LOCAL_STORAGE:
+            return items
         default:
             return state;
     }
