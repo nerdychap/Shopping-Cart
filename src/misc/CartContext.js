@@ -9,6 +9,9 @@ const CartContextProvider = ({ children }) => {
     if (localStorage.getItem("cartItems")) {
         var cartItems = JSON.parse(localStorage.getItem("cartItems"));
     }
+    else {
+        var cartItems = [];
+    }
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(1);
