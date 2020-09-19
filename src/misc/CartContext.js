@@ -6,11 +6,9 @@ import { reducer } from './methods';
 export const CartContext = createContext([]);
 
 const CartContextProvider = ({ children }) => {
+    var cartItems = [];
     if (localStorage.getItem("cartItems")) {
-        var cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    }
-    else {
-        var cartItems = [];
+        cartItems = JSON.parse(localStorage.getItem("cartItems"));
     }
     const [itemName, setItemName] = useState("");
     const [price, setPrice] = useState(0);
