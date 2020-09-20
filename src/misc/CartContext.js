@@ -21,7 +21,7 @@ const CartContextProvider = ({ children }) => {
             return item.name.toLowerCase().trim() !== itemName.toLowerCase().trim();
         });
         if (duplicate) {
-            dispatch({ type: ACTIONS.ADD_ITEM, payload: { itemName: itemName, price: price, quantity: quantity, items: items } });
+            dispatch({ type: ACTIONS.ADD_ITEM, payload: { itemName, price, quantity, items } });
             setPrice(0);
             setItemName("");
             setQuantity(1);
@@ -32,7 +32,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const handleRemove = (id) => {
-        dispatch({ type: ACTIONS.REMOVE_ITEM, payload: { items: items, id: id } })
+        dispatch({ type: ACTIONS.REMOVE_ITEM, payload: { items, id } })
 
     }
 
@@ -42,7 +42,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const editField = (value, id, productName) => {
-        dispatch({ type: ACTIONS.EDIT_FIELD, payload: { id: id, value: value, productName: productName } })
+        dispatch({ type: ACTIONS.EDIT_FIELD, payload: { id, value, productName } })
 
     }
     useEffect(() => {
