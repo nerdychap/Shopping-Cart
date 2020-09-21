@@ -43,3 +43,8 @@ export const reducer = (state, action) => {
             return state;
     }
 }
+
+export const stateUpdate = (event, updateState) => {
+    const newStateValue = event.target.value;
+    updateState(newStateValue);
+}

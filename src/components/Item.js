@@ -8,7 +8,7 @@ const Item = ({ item, removeItem, editField }) => {
         <ItemStyle>
             <div>Name: <span contentEditable suppressContentEditableWarning onBlur={(e) => editField(e.target.innerText, id, "productName")} >{name}</span></div>
             <div>Price(R): <span contentEditable suppressContentEditableWarning onBlur={(e) => editField(e.target.innerText, id, "productPrice")}>{price}</span></div>
-            <div>Quantity: <span contentEditable suppressContentEditableWarning onBlur={(e) => editField(parseInt(e.target.innerText), id, "productQuantity")}>{quantity}</span></div>
+            <div>Quantity: <span contentEditable suppressContentEditableWarning onBlur={(e) => editField(parseInt(e.target.innerText), id, "productQuantity")}>{parseInt(quantity)}</span></div>
             <Button color="white" bgColor="orange" onClick={() => removeItem(id)}>REMOVE ITEM</Button>
         </ItemStyle>
     )

@@ -13,8 +13,8 @@ const Footer = () => {
 
     return (
         <FooterStyle>
-            <Total>Total (R): <span>{cartTotal.toPrecision(4)}</span></Total>
-            <Button bgColor="red" color="white" onClick={() => clearCart()} disabled={itemLength === 0}>CLEAR CART</Button>
+            <Total>Total (R): <span>{cartTotal.toFixed(2)}</span></Total>
+            <Button bgColor="red" color="white" onClick={clearCart} disabled={itemLength === 0}>CLEAR CART</Button>
         </FooterStyle>
     )
 }

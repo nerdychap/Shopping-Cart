@@ -15,6 +15,7 @@ const CartContextProvider = ({ children }) => {
     const [quantity, setQuantity] = useState(1);
     const [items, dispatch] = useReducer(reducer, cartItems);
     const [isDuplicate, setIsDuplicate] = useState(false);
+    const [priceIsZero, setPriceIsZero] = useState(false);
 
     const handleSubmit = () => {
         const duplicate = items.every((item) => {
@@ -58,7 +59,7 @@ const CartContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <CartContext.Provider value={{ itemName, items, setItemName, price, setPrice, quantity, setQuantity, isDuplicate, setIsDuplicate, removeItem: handleRemove, handleSubmit, clearCart, editField }}>
+        <CartContext.Provider value={{ priceIsZero, setPriceIsZero, itemName, items, setItemName, price, setPrice, quantity, setQuantity, isDuplicate, setIsDuplicate, removeItem: handleRemove, handleSubmit, clearCart, editField }}>
             {children}
         </CartContext.Provider>
     )
