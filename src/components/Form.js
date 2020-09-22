@@ -43,7 +43,7 @@ const Form = () => {
                 </InputWrapper>
                 <InputWrapper>
                     <Label htmlFor="itemPrice">Price (R)</Label><Input color="grey" id="itemPrice" type="number" step="0.01" value={price} onChange={priceChange} required />
-                    {priceIsZero ? <DuplicateError>Price cannot be zero</DuplicateError> : ""}
+                    {priceIsZero ? <DuplicateError>Price must be greater than zero</DuplicateError> : ""}
                 </InputWrapper>
                 <InputWrapper>
                     <Label htmlFor="quantity">Quantity</Label>
